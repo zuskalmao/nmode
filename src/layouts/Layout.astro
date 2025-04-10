@@ -1,0 +1,92 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Monkey Mode - The Solana memecoin for pure primal chaos" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		--monkey-red: #FF4500;
+		--monkey-dark: #1A1A1A;
+		--monkey-yellow: #FFD700;
+		--monkey-brown: #8B4513;
+		--monkey-light: #FFF8E7;
+	}
+	html {
+		font-family: 'Roboto', system-ui, sans-serif;
+		background: var(--monkey-dark);
+		scroll-behavior: smooth;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		color: var(--monkey-light);
+		overflow-x: hidden;
+	}
+	h1, h2, h3, h4, h5 {
+		font-family: 'Bangers', cursive;
+		letter-spacing: 1px;
+	}
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
+	}
+	.highlight {
+		color: var(--monkey-red);
+		display: inline;
+	}
+	.yellow-text {
+		color: var(--monkey-yellow);
+	}
+	.btn {
+		font-family: 'Bangers', cursive;
+		background-color: var(--monkey-red);
+		color: white;
+		border: none;
+		padding: 12px 28px;
+		font-size: 1.2rem;
+		letter-spacing: 1px;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: all 0.3s;
+		text-decoration: none;
+		display: inline-block;
+		text-transform: uppercase;
+	}
+	.btn:hover {
+		background-color: #FF6D00;
+		transform: scale(1.05) rotate(-1deg);
+	}
+	.image-placeholder {
+		background-color: rgba(255,255,255,0.1);
+		border: 2px dashed var(--monkey-brown);
+		border-radius: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: var(--monkey-light);
+		padding: 2rem;
+		margin: 1rem 0;
+	}
+</style>
